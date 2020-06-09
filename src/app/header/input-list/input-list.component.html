@@ -1,0 +1,34 @@
+<div>
+        <h3>Input values {{planLists.length}}</h3> 
+      
+        <div class="aPlan" *ngFor="let anInput of planLists; let i = index">
+           
+                  <a (click)="initiateEditing(i)">Plan Name: {{anInput.planName}}</a>
+                  <p>Plan point: {{anInput.planPoint}}</p>
+                  <p>Plan Description: {{anInput.planDescription}}</p>
+                  <p>Plan Start Date: {{anInput.planStartDate}}</p>
+                  <p>Plan End Date: {{anInput.planEndDate}}</p>
+          
+          </div>
+      
+        
+      <div class="form-group">
+        <button type="text" 
+          class="btn btn-danger"
+          (click)="deleteThis()"
+        *ngIf="isEditMode">Delete</button>
+  
+        <button type="text" 
+          class="btn btn-warning"
+          (click)="clearInputField()"
+        >Clear</button>
+  
+        <button 
+          class="btn btn-primary" 
+          (click)="getGreeted()"
+        >Get</button>
+      </div>
+      
+      <h6 *ngIf="greeting != null">
+      </h6>
+</div>
