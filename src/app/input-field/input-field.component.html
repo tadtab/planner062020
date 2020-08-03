@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-1-of-2">
+    <div class="input-area">
+
+    
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+          <div class="input__form-group">
+            <input class="input__form-control" type="text"
+              ngModel #planName="ngModel" id="planName" name="planName"  placeholder = "Plan Name" required>
+              <label class="input__form-label" for="planName" >Plan Name</label>
+              <span *ngIf="planName.invalid && planName.touched" style="color: red;">Plan Name is required</span>
+          </div>
+          <div class="input__form-group" >
+            <input class="input__form-control" type="number"
+              ngModel #planPoint="ngModel" name="planPoint"  placeholder="Enter a number for Plan Point" required>
+              <label class="input__form-label" for="planPoint" >Plan Point</label>
+              <span *ngIf="planPoint.invalid && planPoint.touched" style="color: red;">Plan Point is required</span>
+          </div> 
+          <div class="input__form-group">
+            <textarea  ngModel #planDescription="ngModel" name="planDescription" class="input__form-control" rows="4" placeholder="Plan Description"></textarea>
+              <label class="input__form-label" value="planDescription">Plan Description</label>  
+            </div>
+          <div class="input__form-group">
+            <input ngModel #planStartDate="ngModel" name="planStartDate" class="input__form-control" type="date" placeholder="Plan Start Date">
+            <label class="input__form-label" value="planStartDate">Plan Start Date</label>  
+          </div>
+          <div class="input__form-group">
+            <input ngModel #planEndDate="ngModel" name="planEndDate" class="input__form-control" type="date" placeholder="Plan End Date">
+            <label class="input__form-label" value="planEndDate">Plan End Date</label>  
+          </div>
+
+          <div class="add-update">
+              <button class="button__add-update"
+                [disabled]="!f.valid"
+                type="submit"
+                >{{isEditMode ? 'Update': 'Add'}}</button>
+          </div>
+        </form>
+      </div>
+  </div>
+    
+ 
+    <div class="col-1-of-2">
+        <h3>Currently there are {{planLists.length}} Plans</h3> 
+        <div class="single__list-desplay" *ngFor="let anInput of planLists; let i = index">
+          <h4>Plan {{i + 1}} Detail: </h4>
+          <a (click)="initiateEditing(i)"><span>Plan Name: </span>{{anInput.planName}}</a><br>
+          <a (click)="initiateEditing(i)"><span>Plan Point: </span>{{anInput.planPoint}}</a>
+        </div>
+    </div>    
+</div>

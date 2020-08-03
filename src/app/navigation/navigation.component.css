@@ -1,0 +1,19 @@
+.navigation {
+    margin-top: 0;
+    background-image:  linear-gradient(to right bottom, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8) ), url("../../assets/img/nav-bkj-sunset.jpg");
+    height: 100vh;
+    text-align: center;
+    color: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.653);
+}
+
+.navigation ul li{
+    list-style: none;
+    padding-bottom: 50px;
+    color: white;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+}

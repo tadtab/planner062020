@@ -1,0 +1,114 @@
+
+.row {
+    max-width: 85.5rem;
+    margin: 0 auto ;
+    background-color: gold;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-1-of-2 {
+    width: 41.25rem;
+    float: left;
+}
+
+.col-1-of-2:not(:last-child){
+    margin-right: 3rem;
+}
+.input-area {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.653);
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.input__form-group{
+    margin: 2rem;
+}
+
+.input__form-control {
+    border-radius: .1rem;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    border: none;
+    background-color: beige;
+    font-size: 1.3rem;
+    border-bottom: .2rem solid transparent;
+    transition: all .5s;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.2);
+}
+.input__form-label{
+    margin-left: 2.5rem;
+    transition: all .6s;
+    font-size: 1.3rem;
+    padding-top: .5rem;
+}
+
+.input__form-control:placeholder-shown + .input__form-label{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem);
+}
+
+.input__form-control:focus {
+    outline: none;
+}
+
+.input__form-control:focus:invalid {
+    border-bottom: .2rem solid red;
+}
+
+.input__form-control:focus:valid {
+    border-bottom: .2rem solid green;
+}
+
+.input__form-control:focus:invalid + .input__form-label {
+    color: red;
+}
+
+
+.add-update {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.button__add-update {
+    background-color: rgb(22, 22, 218);
+    height: 4rem;
+    width: 9rem;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: 10rem;
+    transition: all .2s;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.653);
+}
+
+.button__add-update:hover {
+    transform: translateY(-.5rem);
+}
+
+.button__add-update:active {
+    transform: translateY(-.1rem);
+}
+
+
+.list-desplay {
+    display: inline-block;
+    position: absolute;
+    transform: translate(50rem);
+    text-align: center;
+    
+    padding: 4rem;
+}
+
+.single__list-desplay {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: beige;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.653);
+}

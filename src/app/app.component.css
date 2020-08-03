@@ -1,0 +1,30 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.big__row {
+    max-width: 114rem;
+    margin: 0 auto ;
+}
+
+.big__row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.big__col-1-of-4 {
+    width: 12.5rem;
+    float: left;
+}
+
+.big__col-3-of-4 {
+    width: 85.5rem;
+    float: right;
+}
+
